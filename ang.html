@@ -7,16 +7,29 @@ border:1px solid green;
 }
  </style>
 <script>
-phone number validation
+function myfunction(inputtxt)
+{
+  var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$//;
+  if((inputtxt.value.match(phoneno))
+        {
+      return true;
+        }
+      else
+        {
+        alert("enter valid number");
+        return false;
+        }
+}
+
 </script>
 </head>
 <body>
 	<div ng-app = "myApp">
-	<form action="#">
+	<form name="form1" action="#">
 	  user:<input type="text" ng-model="user.name" required>
-	  email:<input type="email" ng-model="user.email" required>
-	  number:<input type="text" ng-model="user.phone" required>
-	  <input type="submit" value="submit" ng-click="hello()">
+	  email:<input type="email" ng-model="user.email" id="mail" required>
+	  number:<input type="text" name="text1" ng-model="user.phone" required ">
+	  <input type="submit" value="submit" onclick="myfunction(document.form1.txt1)">
 	  </form>
 	  </div>
 </body>
